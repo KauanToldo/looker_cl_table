@@ -121,9 +121,7 @@ looker.plugins.visualizations.add({
             .grid-header-cell:first-child {
                 border-top-left-radius: 8px;
             }
-            .grid-header-cell:last-child {
-                border-top-right-radius: 8px;
-            }
+
             .numeric {
                 text-align: right;
                 color: black !important; //TODO tentar fugir desse important para tirar a cor vermelha dos negativos
