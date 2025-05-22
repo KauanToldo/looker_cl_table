@@ -21,6 +21,7 @@ looker.plugins.visualizations.add({
             .grid-table {
                 display: grid;
                 border-radius: 8px;
+                border: 1px solid black; 
                 font-family: Arial, sans-serif;
                 width: 100%;
                 gap: 0;
@@ -391,7 +392,6 @@ looker.plugins.visualizations.add({
               } 
 
             headerContainer.appendChild(pivotDiv);
-            
           });
 
           // HEADER ROW 2 (dimensões + medidas+ table calculations)
