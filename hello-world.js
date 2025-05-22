@@ -400,11 +400,16 @@ looker.plugins.visualizations.add({
 
           pivots.forEach(() => {
             finalMetrics.forEach(field => {
+              if(finalMetrics.length == 1){
+                console.log("entrou!");
+              } else {
               const div = document.createElement("div");
               div.className = `grid-cell grid-header-cell header-row-2 ${field._type === 'table_calc' ? 'table-calc' : 'measure'}`;
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               headerContainer.appendChild(div);
+
+            }
             });
           });
         } else {
