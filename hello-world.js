@@ -33,6 +33,7 @@ looker.plugins.visualizations.add({
               top: 0;
               z-index: 1;
               background-color: #fff;
+              border-top: none;
             }
 
             .header-row-2 {
