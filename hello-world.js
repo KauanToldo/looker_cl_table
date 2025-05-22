@@ -405,6 +405,7 @@ looker.plugins.visualizations.add({
                 console.log("entrou!");
                 // const cell = document.getElementById(pivot.key)
                 // cell.style.gridRow = 'span 2'
+                console.log(pivot.key);
 
               } else {
 
