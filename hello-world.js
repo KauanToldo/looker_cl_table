@@ -20,7 +20,6 @@ looker.plugins.visualizations.add({
 
             .grid-table {
                 display: grid;
-                border: 1px solid #000000;
                 border-radius: 8px;
                 font-family: Arial, sans-serif;
                 width: 100%;
