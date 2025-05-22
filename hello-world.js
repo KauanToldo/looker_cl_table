@@ -86,7 +86,7 @@ looker.plugins.visualizations.add({
             }
 
             .grid-header-none {
-              border-right: none;
+              border-right: 0px transparent;
             }
 
             .grid-header-cell {
