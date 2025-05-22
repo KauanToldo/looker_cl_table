@@ -384,7 +384,7 @@ looker.plugins.visualizations.add({
           headerContainer.appendChild(pivotedFieldDiv);
 
           // Cada pivot ocupa o espaço de suas medidas
-
+          let i = 1;
           pivots.forEach(pivot => {
             const pivotLabel = pivot.key.split("|")[0];
             const pivotDiv = document.createElement("div");
@@ -395,12 +395,14 @@ looker.plugins.visualizations.add({
 
             const tamanho = pivots.length;
 
-            pivotDiv.className = ""
 
+            if(tamanho == i)
+              pivotDiv.className = "grid-header-none";
+          
             if(finalMetrics.length == 1){
                 pivotDiv.style.gridRow = 'span 2'
               } 
-
+            i++;
             headerContainer.appendChild(pivotDiv);
           });
 
