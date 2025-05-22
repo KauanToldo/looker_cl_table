@@ -387,7 +387,14 @@ looker.plugins.visualizations.add({
             pivotDiv.id = pivotLabel;
             pivotDiv.style.gridColumn = `span ${measureCount + tableCalcs.length}`;
             pivotDiv.textContent = pivotLabel;
+
+            if(finalMetrics.length == 1){
+                console.log("entrou!");
+                pivotDiv.style.gridRow = 'span 2'
+              } 
+
             headerContainer.appendChild(pivotDiv);
+            
           });
 
           // HEADER ROW 2 (dimensões + medidas+ table calculations)
@@ -399,23 +406,19 @@ looker.plugins.visualizations.add({
             headerContainer.appendChild(dimDiv);
           });
 
-          pivots.forEach(pivot => {
+          pivots.forEach(() => {
             finalMetrics.forEach(field => {
-              if(finalMetrics.length == 1){
-                console.log("entrou!");
-                // const cell = document.getElementById(pivot.key)
-                // cell.style.gridRow = 'span 2'
-                console.log(pivot.key);
 
-              } else {
+              if (finalMetrics.length == 1){
+                return;
+              }
+
 
               const div = document.createElement("div");
               div.className = `grid-cell grid-header-cell header-row-2 ${field._type === 'table_calc' ? 'table-calc' : 'measure'}`;
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               headerContainer.appendChild(div);
-
-            }
             });
           });
         } else {
