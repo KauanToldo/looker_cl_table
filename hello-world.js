@@ -395,7 +395,7 @@ looker.plugins.visualizations.add({
             pivotDiv.textContent = pivotLabel;
 
             
-            if (finalMetrics.length == i)
+            if ((measureCount + tableCalcs.length) == i)
               pivotDiv.className = "grid-header-none";
 
             if(finalMetrics.length == 1){
