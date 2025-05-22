@@ -96,6 +96,16 @@ looker.plugins.visualizations.add({
                 // position: sticky;
             }
 
+            .grid-header-pivot{
+                font-weight: bold;
+                background-color: #f2f2f2;
+                font-size: 12px;
+                text-align: center;
+                display: flex;
+                justify-content: bottom;
+                align-items: center;
+            }
+
             .pivot-dimension, .dimension {
                 background-color: #012C75 !important;
                 color: white !important;
@@ -382,13 +392,12 @@ looker.plugins.visualizations.add({
           pivots.forEach(pivot => {
             const pivotLabel = pivot.key.split("|")[0];
             const pivotDiv = document.createElement("div");
-            pivotDiv.className = "grid-cell grid-header-cell header-row-1 pivot-dimension";
+            pivotDiv.className = "grid-cell grid-header-pivot header-row-1 pivot-dimension";
             pivotDiv.id = pivotLabel;
             pivotDiv.style.gridColumn = `span ${measureCount + tableCalcs.length}`;
             pivotDiv.textContent = pivotLabel;
 
             if(finalMetrics.length == 1){
-                console.log("entrou!");
                 pivotDiv.style.gridRow = 'span 2'
               } 
 
@@ -406,12 +415,9 @@ looker.plugins.visualizations.add({
 
           pivots.forEach(() => {
             finalMetrics.forEach(field => {
-
               if (finalMetrics.length == 1){
                 return;
               }
-
-
               const div = document.createElement("div");
               div.className = `grid-cell grid-header-cell header-row-2 ${field._type === 'table_calc' ? 'table-calc' : 'measure'}`;
               const customLabel = config[`label_${field.name}`];
