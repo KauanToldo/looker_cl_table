@@ -85,6 +85,10 @@ looker.plugins.visualizations.add({
                 border-top: 2px solid #ddd;
             }
 
+            .grid-header-none {
+              border-right: none;
+            }
+
             .grid-header-cell {
                 font-weight: bold;
                 background-color: #f2f2f2;
@@ -380,6 +384,8 @@ looker.plugins.visualizations.add({
           headerContainer.appendChild(pivotedFieldDiv);
 
           // Cada pivot ocupa o espaço de suas medidas
+          let i = 1
+
           pivots.forEach(pivot => {
             const pivotLabel = pivot.key.split("|")[0];
             const pivotDiv = document.createElement("div");
@@ -388,10 +394,15 @@ looker.plugins.visualizations.add({
             pivotDiv.style.gridColumn = `span ${measureCount + tableCalcs.length}`;
             pivotDiv.textContent = pivotLabel;
 
+            
+            if (finalMetrics.length == i)
+              pivotDiv.className = "grid-header-none";
+
             if(finalMetrics.length == 1){
                 pivotDiv.style.gridRow = 'span 2'
               } 
 
+            i++;
             headerContainer.appendChild(pivotDiv);
           });
 
