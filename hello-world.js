@@ -394,11 +394,11 @@ looker.plugins.visualizations.add({
             pivotDiv.style.gridColumn = `span ${measureCount + tableCalcs.length}`;
             pivotDiv.textContent = pivotLabel;
 
-            
+            console.log(totalCols);
 
-            if (totalCols == i)
-              pivotDiv.className = "grid-header-none";
-              console.log(pivotLabel);
+            // if (totalCols == i)
+            //   pivotDiv.className = "grid-header-none";
+            //   console.log(pivotLabel);
 
             if(finalMetrics.length == 1){
                 pivotDiv.style.gridRow = 'span 2'
