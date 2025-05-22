@@ -1,6 +1,6 @@
 looker.plugins.visualizations.add({
-    id: "hello_world",
-    label: "Hello World",
+    id: "custom_table_swap",
+    label: "Swap Table",
     options: {
       show_totals: {
         type: "boolean",
