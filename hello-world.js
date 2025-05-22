@@ -397,7 +397,7 @@ looker.plugins.visualizations.add({
 
 
             if(tamanho == i)
-              pivotDiv.className = "grid-header-none";
+              pivotDiv.add.className = "grid-header-none";
           
             if(finalMetrics.length == 1){
                 pivotDiv.style.gridRow = 'span 2'
