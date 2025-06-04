@@ -417,14 +417,10 @@ looker.plugins.visualizations.add({
             const customLabel = config[`label_${dim.name}`];
             dimDiv.textContent = customLabel
             headerContainer.appendChild(dimDiv);
-            const tamanho = dim.length;
-            if(index == tamanho - 1) {
-              dimDiv.style = "border-right: none"
-            }
           });
 
           pivots.forEach(() => {
-            finalMetrics.forEach(field => {
+            finalMetrics.forEach((field, index) => {
               if (finalMetrics.length == 1){
                 return;
               }
@@ -433,6 +429,10 @@ looker.plugins.visualizations.add({
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               headerContainer.appendChild(div);
+              const tamanho = field.length;
+              if(index == tamanho - 1) {
+                div.style = "border-right: none"
+              }
             });
           });
         } else {
