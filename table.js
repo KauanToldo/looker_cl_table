@@ -204,8 +204,14 @@ looker.plugins.visualizations.add({
               z-index: 3;
             }
 
-            .grid-total-container:first-child {
-              border-radius: 8px 0px 0px 0px;
+            .grid-total-container {
+              border-radius: 0px 0px 8px 8px;
+              border: 1px solid black;
+              border-bottom: none;
+            }
+
+            .grid-cell[data-col:"0"] {
+              border-left: 1px solid black;
             }
 
             .header-subgrid-container {
