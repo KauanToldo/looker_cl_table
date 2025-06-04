@@ -1,6 +1,6 @@
 looker.plugins.visualizations.add({
-    id: "custom_table_swap",
-    label: "Swap Table",
+    id: "cl_table",
+    label: "Cluster Table",
     options: {
       show_totals: {
         type: "boolean",
