@@ -411,7 +411,7 @@ looker.plugins.visualizations.add({
           });
 
           // HEADER ROW 2 (dimensões + medidas+ table calculations)
-          dimensions.forEach((dim, index) => {
+          dimensions.forEach(dim => {
             const dimDiv = document.createElement("div");
             dimDiv.className = "grid-cell grid-header-cell header-row-2 dimension";
             const customLabel = config[`label_${dim.name}`];
@@ -419,7 +419,8 @@ looker.plugins.visualizations.add({
             headerContainer.appendChild(dimDiv);
           });
 
-          pivots.forEach(() => {
+          pivots.forEach((pivot, indexPai) => {
+            const tamanho = pivots.length;
             finalMetrics.forEach((field, index) => {
               if (finalMetrics.length == 1){
                 return;
@@ -429,8 +430,8 @@ looker.plugins.visualizations.add({
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               headerContainer.appendChild(div);
-              const tamanho = field.length;
-              if(index == tamanho - 1) {
+              const tamanhoMetricas = pivots.length;
+              if(index == tamanhoMetricas - 1 && indexPai == tamanho - 1) {
                 div.style = "border-right: none"
               }
             });
