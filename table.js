@@ -419,9 +419,8 @@ looker.plugins.visualizations.add({
             headerContainer.appendChild(dimDiv);
           });
 
-          pivots.forEach((pivot, indexPai) => {
-            const tamanho = pivots.length;
-            finalMetrics.forEach((field, index) => {
+          pivots.forEach(() => {
+            finalMetrics.forEach(field => {
               if (finalMetrics.length == 1){
                 return;
               }
@@ -430,10 +429,6 @@ looker.plugins.visualizations.add({
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               headerContainer.appendChild(div);
-              const tamanhoMetricas = pivots.length;
-              if(index == tamanhoMetricas - 1 && indexPai == tamanho - 1) {
-                div.style = "border-right: none"
-              }
             });
           });
         } else {
