@@ -211,8 +211,9 @@ looker.plugins.visualizations.add({
             .header-subgrid-container {
               display: grid;
               grid-template-columns: subgrid;
-              border-radius: 8px 0px 8px 0px;
+              border-radius: 8px 8px 0px 0px;
               border: 1px solid black;
+              border-bottom: none;
               grid-column: 1 / -1;
               position: sticky;
               top: 0;
