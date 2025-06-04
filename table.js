@@ -21,7 +21,7 @@ looker.plugins.visualizations.add({
             .grid-table {
                 display: grid;
                 border-radius: 8px;
-                border: 1px solid black; 
+                // border: 1px solid black; 
                 font-family: Arial, sans-serif;
                 width: 100%;
                 gap: 0;
@@ -211,6 +211,8 @@ looker.plugins.visualizations.add({
             .header-subgrid-container {
               display: grid;
               grid-template-columns: subgrid;
+              border-radius: 8px 0px 8px 0px;
+              border: 1px solid black;
               grid-column: 1 / -1;
               position: sticky;
               top: 0;
