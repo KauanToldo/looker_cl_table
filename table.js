@@ -401,7 +401,7 @@ looker.plugins.visualizations.add({
 
             const tamanho = pivots.length;
             if(index == tamanho - 1) {
-              pivotDiv.style.borderRight = "none";
+              pivotDiv.style = "border-radius: 0 8px 0 0; border-right: none"
             }
 
             if(finalMetrics.length == 1){
@@ -411,12 +411,16 @@ looker.plugins.visualizations.add({
           });
 
           // HEADER ROW 2 (dimensões + medidas+ table calculations)
-          dimensions.forEach(dim => {
+          dimensions.forEach((dim, index) => {
             const dimDiv = document.createElement("div");
             dimDiv.className = "grid-cell grid-header-cell header-row-2 dimension";
             const customLabel = config[`label_${dim.name}`];
             dimDiv.textContent = customLabel
             headerContainer.appendChild(dimDiv);
+            const tamanho = dim.length;
+            if(index == tamanho - 1) {
+              dimDiv.style = "border-right: none"
+            }
           });
 
           pivots.forEach(() => {
