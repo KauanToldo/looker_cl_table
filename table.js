@@ -401,7 +401,7 @@ looker.plugins.visualizations.add({
 
             const tamanho = pivots.length;
             if(index == tamanho - 1) {
-              pivotDiv.style = "border-radius: 0 8px 0 0; border-right: none"
+              pivotDiv.style.borderRight = "none";
             }
 
             if(finalMetrics.length == 1){
