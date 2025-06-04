@@ -81,8 +81,8 @@ looker.plugins.visualizations.add({
             }
 
             .grid-header-cell.grid-cell {
-                border-right: 2px solid #ddd;
-                border-top: 2px solid #ddd;
+                border-right: 1px solid #ddd;
+                border-top: 1px solid #ddd;
             }
 
             .grid-header-none {
@@ -234,8 +234,6 @@ looker.plugins.visualizations.add({
         faLink.rel = "stylesheet";
         faLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css";
         document.head.appendChild(faLink);
-
-        console.log(queryResponse)
 
         const pivots = queryResponse.pivots || [];
         // const pivot_label = queryResponse.fields.pivots?.[0]?.label_short || 'Label não encontrado';
