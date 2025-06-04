@@ -206,7 +206,7 @@ looker.plugins.visualizations.add({
             .grid-total-container {
               border-radius: 0px 0px 8px 8px;
               border: 1px solid black;
-              border-bottom: none;
+              border-top: none;
             }
 
             .grid-cell[data-col="0"] {
@@ -391,7 +391,7 @@ looker.plugins.visualizations.add({
           headerContainer.appendChild(pivotedFieldDiv);
 
           // Cada pivot ocupa o espaço de suas medidas
-          pivots.forEach(pivot, index => {
+          pivots.forEach((pivot, index) => {
             const pivotLabel = pivot.key.split("|")[0];
             const pivotDiv = document.createElement("div");
             pivotDiv.className = "grid-cell grid-header-cell header-row-1 pivot-dimension";
