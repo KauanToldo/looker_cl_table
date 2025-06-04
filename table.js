@@ -264,6 +264,7 @@ looker.plugins.visualizations.add({
         const pivotCount = hasPivot ? pivots.length : 1;
         const totalCols = dimensionCount + (pivotCount * (measureCount + tableCalcs.length));
 
+
         // Adiciona dinamicamente labels para dimensões, medidas e cálculos
         const fields = [
           ...queryResponse.fields.dimensions,
@@ -390,7 +391,7 @@ looker.plugins.visualizations.add({
           headerContainer.appendChild(pivotedFieldDiv);
 
           // Cada pivot ocupa o espaço de suas medidas
-          pivots.forEach(pivot => {
+          pivots.forEach(pivot, index => {
             const pivotLabel = pivot.key.split("|")[0];
             const pivotDiv = document.createElement("div");
             pivotDiv.className = "grid-cell grid-header-cell header-row-1 pivot-dimension";
@@ -399,6 +400,9 @@ looker.plugins.visualizations.add({
             pivotDiv.textContent = pivotLabel;
 
             const tamanho = pivots.length;
+            if(index == tamanho - 1) {
+              pivotDiv.style.borderRight = "none";
+            }
 
             if(finalMetrics.length == 1){
                 pivotDiv.style.gridRow = 'span 2'
