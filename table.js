@@ -654,7 +654,7 @@ looker.plugins.visualizations.add({
               } else {
                 finalMetrics.forEach((field, index) => {
                     const div = document.createElement("div");
-                    const cellData = row[field.name]?.[pivot.key]; // ou row[field.name] sem pivot
+                    const cellData = row[field.name]
                     const isLastInPivotBlock = index === allMetrics.length - 1;
                     div.className = `grid-cell numeric ${rowClass} ${field._type === 'table_calc' ? 'table-calc-cell' : ''} ${!isLastInPivotBlock ? 'no-right-border' : ''}`;
                     div.dataset.row = rowIndex;
