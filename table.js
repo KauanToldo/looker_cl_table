@@ -60,7 +60,7 @@ looker.plugins.visualizations.add({
 
             .grid-cell {
                 border-right: 1px solid black;
-                border-top: 1px solid #ddd;
+                border-top: .5px solid #ddd;
                 padding: 10px;
                 background: white;
                 white-space: nowrap;
@@ -68,7 +68,6 @@ looker.plugins.visualizations.add({
                 text-decoration: none;
                 color: #000000;
                 box-sizing: border-box;
-                margin-top: -1px;
             }
 
             // .grid-cell[data-col="1"], .grid-table > .grid-cell.header-row-2.dimension:last-child {
@@ -210,7 +209,7 @@ looker.plugins.visualizations.add({
               border-bottom: none;
             }
 
-            .grid-cell[data-col:"0"] {
+            .grid-cell[data-col="0"] {
               border-left: 1px solid black;
             }
 
