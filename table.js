@@ -380,6 +380,8 @@ looker.plugins.visualizations.add({
         const headerContainer = document.createElement("div");
         headerContainer.className = "header-subgrid-container";
 
+        let colIndex = 0;
+
         // HEADER ROW 1
         if (hasPivot) {
           // Nome do campo pivotado sobre as dimensões
@@ -389,6 +391,8 @@ looker.plugins.visualizations.add({
           const customLabel = config[`label_pivot_${queryResponse.fields.pivots?.[0]?.name}`];
           pivotedFieldDiv.textContent = customLabel
           headerContainer.appendChild(pivotedFieldDiv);
+          colIndex ++;
+          
 
           // Cada pivot ocupa o espaço de suas medidas
           pivots.forEach((pivot, index) => {
@@ -398,7 +402,7 @@ looker.plugins.visualizations.add({
             pivotDiv.id = pivotLabel;
             pivotDiv.style.gridColumn = `span ${measureCount + tableCalcs.length}`;
             pivotDiv.textContent = pivotLabel;
-
+            pivotDiv.dataset.col = colIndex += measureCount + tableCalcs.length;
             const tamanho = pivots.length;
             if(index == tamanho - 1) {
               pivotDiv.style.borderRight = "none";
@@ -412,12 +416,15 @@ looker.plugins.visualizations.add({
           });
 
           // HEADER ROW 2 (dimensões + medidas+ table calculations)
+          let colIndexHeader = 0
           dimensions.forEach(dim => {
             const dimDiv = document.createElement("div");
             dimDiv.className = "grid-cell grid-header-cell header-row-2 dimension";
             const customLabel = config[`label_${dim.name}`];
             dimDiv.textContent = customLabel
+            dimDiv.dataset.col = colIndexHeader;
             headerContainer.appendChild(dimDiv);
+            colIndexHeader++;
           });
 
           pivots.forEach(() => {
@@ -429,7 +436,12 @@ looker.plugins.visualizations.add({
               div.className = `grid-cell grid-header-cell header-row-2 ${field._type === 'table_calc' ? 'table-calc' : 'measure'}`;
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
+              div.dataset.col = colIndexHeader;
+              if(colIndexHeader == pivots*measureCount+tableCalcs.length) {
+                div.style = "border-right: none;"
+              }
               headerContainer.appendChild(div);
+              colIndexHeader++;
             });
           });
         } else {
