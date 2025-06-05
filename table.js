@@ -429,7 +429,6 @@ looker.plugins.visualizations.add({
 
           pivots.forEach(() => {
             finalMetrics.forEach(field => {
-              colIndexHeader++;
               if (finalMetrics.length == 1){
                 return;
               }
@@ -442,7 +441,7 @@ looker.plugins.visualizations.add({
                 div.style.borderRight = "none"
               }
               headerContainer.appendChild(div);
-
+              colIndexHeader++;
             });
           });
         } else {
@@ -457,7 +456,7 @@ looker.plugins.visualizations.add({
 
           finalMetrics.forEach(field => {
             const div = document.createElement("div");
-            div.className = `grid-cell grid-header-cell header-row-2 ${field._type === 'table_calc' ? 'table-calc' : 'measure'}`;
+            div.className = `grid-cell grid-header-cell header-row ${field._type === 'table_calc' ? 'table-calc' : 'measure'}`;
             const customLabel = config[`label_${field.name}`];
             div.textContent = customLabel;
             headerContainer.appendChild(div);
