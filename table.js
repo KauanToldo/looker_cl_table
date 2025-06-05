@@ -438,7 +438,7 @@ looker.plugins.visualizations.add({
               div.textContent = customLabel;
               div.dataset.col = colIndexHeader;
               console.log(colIndexHeader);
-              console.log(pivots*(measureCount+tableCalcs.length))
+              console.log(pivots.length*(measureCount+tableCalcs.length))
               // if(colIndexHeader == pivots*(measureCount+tableCalcs.length)) {
 
               //   div.style.borderRight = "none"
