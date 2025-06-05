@@ -429,6 +429,7 @@ looker.plugins.visualizations.add({
 
           pivots.forEach(() => {
             finalMetrics.forEach(field => {
+              colIndexHeader++;
               if (finalMetrics.length == 1){
                 return;
               }
@@ -437,11 +438,11 @@ looker.plugins.visualizations.add({
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               div.dataset.col = colIndexHeader;
-              if(colIndexHeader+1 == pivots.length*(measureCount+tableCalcs.length)) {
+              if(colIndexHeader == pivots.length*(measureCount+tableCalcs.length)) {
                 div.style.borderRight = "none"
               }
               headerContainer.appendChild(div);
-              colIndexHeader++;
+
             });
           });
         } else {
