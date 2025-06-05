@@ -764,8 +764,7 @@ looker.plugins.visualizations.add({
             tableGrid.querySelectorAll(".grid-cell").forEach(c => {
                 if (c.dataset.row === row || c.dataset.col === col) {
                   if (!c.classList.contains("grid-total-row") &&
-                      !c.classList.contains("grid-header-cell") &&
-                      !c.classList.contains("sticky-dimension")) { // Added sticky-dimension check here too
+                      !c.classList.contains("grid-header-cell")) { // Added sticky-dimension check here too
                       c.classList.add("hovered");
                   }
                   if(!(c.classList.contains("grid-total-row")) && c === cell) {
@@ -871,7 +870,7 @@ looker.plugins.visualizations.add({
               const headerCell = headerCells[i];
               if (headerCell) {
                 headerCell.classList.add("sticky-dimension");
-                headerCell.style.left = `${left-1}px`;
+                headerCell.style.left = `${left}px`;
               }
             }
 
