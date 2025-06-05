@@ -763,7 +763,7 @@ looker.plugins.visualizations.add({
 
             tableGrid.querySelectorAll(".grid-cell").forEach(c => {
                 if (c.dataset.row === row || c.dataset.col === col) {
-                  if(!(c.classList.contains("grid-total-row ") || c.classList.contains("grid-header-cell"))) {
+                  if(!(c.classList.contains("grid-total-row ") || !(c.classList.contains("grid-header-cell")))) {
                     c.classList.add("hovered");
                   }
                   if(!(c.classList.contains("grid-total-row")) && c === cell) {
