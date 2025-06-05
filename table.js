@@ -437,11 +437,11 @@ looker.plugins.visualizations.add({
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               div.dataset.col = colIndexHeader;
+              headerContainer.appendChild(div);
+              colIndexHeader++;
               if(colIndexHeader == pivots.length*(measureCount+tableCalcs.length)) {
                 div.style.borderRight = "none"
               }
-              headerContainer.appendChild(div);
-              colIndexHeader++;
             });
           });
         } else {
