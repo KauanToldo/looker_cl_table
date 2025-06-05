@@ -438,10 +438,10 @@ looker.plugins.visualizations.add({
               div.textContent = customLabel;
               div.dataset.col = colIndexHeader;
               headerContainer.appendChild(div);
-              colIndexHeader++;
-              if(colIndexHeader == pivots.length*(measureCount+tableCalcs.length)) {
+              if(colIndexHeader == (pivots.length*(measureCount+tableCalcs.length)) + 1) {
                 div.style.borderRight = "none"
               }
+              colIndexHeader++;
             });
           });
         } else {
