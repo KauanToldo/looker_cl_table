@@ -437,8 +437,10 @@ looker.plugins.visualizations.add({
               const customLabel = config[`label_${field.name}`];
               div.textContent = customLabel;
               div.dataset.col = colIndexHeader;
-              if(colIndexHeader + 1 == pivots*measureCount+tableCalcs.length) {
-                div.style = "border-right: none;"
+              if(colIndexHeader + 1 == pivots*(measureCount+tableCalcs.length)) {
+                console.log(colIndexHeader);
+                console.log(pivots*(measureCount+tableCalcs.length))
+                div.style.borderRight = "none"
               }
               headerContainer.appendChild(div);
               colIndexHeader++;
