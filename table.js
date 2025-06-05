@@ -726,6 +726,9 @@ looker.plugins.visualizations.add({
                   div.dataset.col = colIndex;
                   div.innerHTML = LookerCharts.Utils.htmlForCell(value);
                   totalContainer.appendChild(div);
+                  if(colIndex == (pivots.length*(measureCount+tableCalcs.length)) + 1) {
+                    div.style.borderRight = "none"
+                  }
                   colIndex++;
                 });
               });
