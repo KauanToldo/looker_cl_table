@@ -238,9 +238,9 @@ looker.plugins.visualizations.add({
         this.clearErrors();
         this._tableContainer.innerHTML = "";
 
-        console.log(`queryResponse: ${queryResponse}`)
-        console.log(`details: ${details}`)
-        console.log(`data: ${data}`)
+        console.log(queryResponse)
+        console.log(details)
+        console.log(data)
 
 
         const faLink = document.createElement("link");
